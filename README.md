@@ -5,7 +5,7 @@ This is a collection of my React notes. It includes the basics of React, React H
 - [Project List](#project-list)
 - 
 # Project List
-`This table contains a list of projects that I have worked on using React`
+`Project that use to practice React`
 
 
 # React
