@@ -40,9 +40,9 @@ npm start
 - `<>`: use fragment to wrap multiple elements incase of returning multiple elements without the need of extra div
 ### Event Handlers
 - When passing an event in a function, if you dont want it to be called immediately, you can pass it as a function.
-  - <button onClick={Function()}>
+  - ```<button onClick={Function()}>```
 - If you want it to be called when button is being click, remove the parenthesis.
-  - <button onClick={Function}>
+  - ```<button onClick={Function}>```
 
 ## 2. Reusable Components
 - Components are the building blocks of a React application
