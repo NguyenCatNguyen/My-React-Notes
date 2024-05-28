@@ -3,9 +3,8 @@ This is a collection of my React notes. It includes the basics of React, React H
 # Table of Contents
 - [React](#react)
 - [Project List](#project-list)
-- 
 # Project List
-`Project that use to practice React`
+Project that use to practice React
 
 
 # React
