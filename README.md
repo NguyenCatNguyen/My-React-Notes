@@ -7,7 +7,7 @@ This is a collection of my React notes. It includes the basics of React, React H
 Project that use to practice React
 
 # Shortcuts
-- emoji pop up: `ctrl + cmd + space`
+- Emoji pop up: `ctrl + cmd + space`
 
 # React 
 ## Index
@@ -19,284 +19,12 @@ Project that use to practice React
 6. [Routing](#6-routing)
 7. [API Integration](#7-api-integration)
 
-# ❗️ Quick notes
-## 1. If a function is being called at the beginning.
-- Make sure to remove the `React.StrictMode` in the `index.js` file to avoid the function being called twice.
-  - `React.StrictMode` is used to check for potential problems in the application.
-
-## React better practices ✨
-- `<>`: use fragment to wrap multiple elements incase of returning multiple elements without the need of extra div
-
-## JS Side Notes
-### Operators
-- And: `&&`
-- Or: `||`
-- Not: `!`
-- Ternary: `? :`
-  - Use to check if a condition is true or false
-  - Example: `5 === 5 ? "Yes" : "No"`
-- Nullish Coalescing: `??`
-- Optional Chaining: `?.`
-- Logical Assignment: `&&=`, `||=`
-- Nullish Assignment: `??=`
-- Set value to false: `!!0`
 
 
-# Get Started
-1. Command to install create-react-app
-```bash
-npx create-react-app my-app
-```
-1. Command to start the server
-```bash 
-npm start
-```
+## 3. 
+## 4. 
 
-## 1. Introduction ⭐️
-- React is a JavaScript library for building user interfaces.
-- Maintain by Facebook
-### 🤨 Why React?
-- Easier to use
-- Maintainable
-- Reusable
-- Most popular front-end framework
-
-### Event Handlers
-- When passing an event in a function, if you dont want it to be called immediately, you can pass it as a function.
-  - ```<button onClick={Function()}>```
-- If you want it to be called when button is being click, remove the parenthesis.
-  - ```<button onClick={Function}>```
-
-### File Structure explanation 📝
-- `App.js`: is the main file that is rendered in the browser
-  - Used to render all the components
-- `index.js`: is the file that renders the App.js file
-  - Used to render the App.js file in the browser
-  - Adding FontAwesome
-    - `import '@fortawesome/fontawesome-free/css/all.min.css'`
-
-## 2. Reusable Components ⭐️
-- Components are the building blocks of a React application
-- `Two parts of a component`
-  - Create a component
-  - Use a component
-#### Reason for using jsx
-- jsx is a syntax extension for JavaScript
-- jsx allow auto completion when writing HTML
-### Step 1: Create a component
-1. Create a new file
-2. Inside of this file create a function
-3. Inside of your function return some jsx
-4. Export your function
-```javascript
-// Create Todo.jsx
-function Todo(){
-    return(
-        <div>
-        <p>Todo</p>
-        </div>
-    )
-}
-// Export the function
-export default Todo
-```
-### Step 2: Use a component
-#### 1. Import the component
-```jsx 
-import Todo from './components/Todo.jsx'
-```
-- **Note:** The file path is relative to the file you are importing from. For example, this is being imported into the App.js file, so the path is relative to the App.js file.
-#### 2. Use the component
-- `<Todo />` this is the shortnotation for using a component
-
-
-## 3. Props
-- `Props` are arguments passed into React components
-- **CONS:** help make components dynamic
-- `Two steps to use props`
-  - Create the props
-  - Use the props
-### Props notice
-- If pass a string, it should be in quotes
-  - `<Todo propName="Prop Value"/>`
-- If pass a number, it should not be in quotes
-  - `<Todo propName={10}/>`
-### Step 1: Create the props
-- Pass in the property name and value in parent file
-  - `<Todo propName="Prop Value"/>`
-
-### Step 2: Use the props
-- Use the props in the component file
-  - ```js
-    function Todo(props){
-        return(
-            <div>
-            <p>{props.propName}</p>
-            </div>
-        )
-    }
-
-    // Simpler way
-    function Todo({propName}){
-        return(
-            <div>
-            <p>{propName}</p>
-            </div>
-        )
-    }
-    ```
-
-<img src="./Assets/Props.png" alt="Image Description" style="width: 500px; border-radius: 10px; position: relative; left:25%">
-
-
-## 3. Events Handlers ⭐️
-- `Event Handlers` are functions that are called when an event is triggered. It
-- Most important event handlers:
-  - `onClick`: is called when an element is clicked
-  - `onChange`: is called when the value of an element is changed
-
-### 1. onClick
-### 2. onChange
-```jsx
-// On Change Example
-import React, {useState} from 'react';
-function Input(){
-    const [input, setInput] = useState("")
-    function handleChange(event){
-        setInput(event.target.value) // Get the value of the input
-    }
-    return(
-        <div>
-            <input type="text" value={input} onChange={handleChange}/>
-            <p>{input}</p>
-        </div>
-    )
-}
-```
-- `event.target.value`: is used to get the value of the input field
-- `event.target.checked`: is used to get the value of a checkbox
-### Important Notes❗️
-- **1️⃣ Work Right Away** 
-  - If you want to pass an argument in a function, you can pass it as a function.
-    - `<button onClick={Function()}>`
--  **2️⃣ Work onClick** 
-   -  If you want it to be called when button is being click, remove the parenthesis.
-     - `<button onClick={Function}>`
-   - If it have an argument, add `() => ` then pass the function with the argument
-     - `<button onClick={() => Function(argument)}>`
-
-## 4. React Hooks ⭐️
-- `Hooks` are functions that let you use state and other React features without writing a class
-- Most important hooks:
-  - `useState`
-    - Define: is how we define variables in React.
-    - When a variable is changed, it re-renders the page automatically. 
-  - `useEffect`
-    - v
-
-### 1. Call Hooks
-- `useState`: is a hook that allows you to have state variables in functional components
-  - `import {useState} from 'react'`
-### 2. useState
-- What is conditional rendering?
-  - Rendering a coponent when a certain condition is met. 
-
-1. Use a callback to get the previous value
-- `setCounter((previous)=> previous +1)`
-2. Spread out all the properties of the prev state `...`
-- `setCounter((previous)=> ...previous, quantity: previous.quantity + 1)`
-3. Only change thee property that you need to change
-### 2.1. useState Specific Case 👩🏽‍💻
-- **Number:**
-  - Pass in the number `setNum(10)`
-  - Incase of dependency on previous value, use a callback
-    - `setNum((prev)=> prev + 1)`
-- **Boolean:**
-  - Pass in the boolean `setBool(true)`
-  - Incase of dependency on previous value, use a callback
-    - `setBool((prev)=> !prev)`
-- **Strings:**
-  - Pass in the string `setStr("Hello")`
-  - Incase of dependency on previous value, use a callback
-    - `setStr((prev)=> prev + " World")`
-- **Objects:**
-  - Pass in the object `setObj({name: "John", age: 20})`
-  - Incase of dependency on previous value, use a callback
-    - `setObj((prev)=> {...prev, age: prev.age + 1})`
-- **Arrays:**
-  - Pass in the array `setArr([1,2,3,4])`
-  - Incase of dependency on previous value, use a callback
-    - `setArr((prev)=> [...prev, 5])`
-#### Example 1
-```jsx
-import React, {useState} from 'react';
-function Counter(){
-
-    const [counter,setCounter] = useState(0)
-    function plus(){
-        setCounter((previous)=> previous +1)
-        setCounter((previous)=> previous +1)
-    }
-    function minus(){
-        setCounter((previous)=> previous -1)
-        setCounter((previous)=> previous -1)
-    }
-    return(
-        <div>
-            <h1>Counter Test: {counter} </h1>
-            <button onClick={()=> plus()}>Increment</button>
-            <button onClick={()=> minus()}>Decrement</button>
-        </div>
-    )
-}
-export default Counter
-```
-#### Example 2
-```jsx
-import React, {useState} from 'react';
-
-// const[init, increment] = useState(0)
-function Counter(){
-
-    const [cart, setCart] = useState({
-        item: "apple",
-        quantity: 0,
-    })
-    function plus(){
-        //1. Use a callback to get the previous value
-        //2. Spread out all the properties of the prev state
-        //3. Only change thee property that you need to change
-        setCart(prevCart =>({
-            ...prevCart,
-            quantity: prevCart.quantity + 1,
-        }))
-    }
-    function minus(){
-        setCart(prevCart =>({
-            ...prevCart,
-            quantity: prevCart.quantity - 1,
-        }))
-    }
-    return(
-        <div>
-            <h1>Counter Test: {cart.quantity} {cart.item} </h1>
-            <button onClick={()=> plus()}>Increment</button>
-            <button onClick={()=> minus()}>Decrement</button>
-        </div>
-    )
-}
-export default Counter
-```
-## JS Side Notes
-- To turn a number into **Boolean** value, you can use `!!`
-  - `!!0` => `false`
-  - `!!1` => `true`
-
-```js
-{isModalOpen && <Modal />}
-// or
-{isModalOpen ? <Modal /> : null}
-```
+## 5. Events Handlers ⭐️
 
 
 ### Emitting Events
@@ -323,7 +51,7 @@ function Child({clicked2}){
 }
 
 ```
-### 5. UseEffect ⭐️
+### 7. UseEffect ⭐️
 - `useEffect` is a hook that allows you to perform side effects in functional components
 - **Import** `import React, {useState, useEffect} from 'react'`
 
@@ -342,7 +70,7 @@ function Child({clicked2}){
 - **Case 3** - `useEffect(()=>{})`
   - Run everytime the component is rendered, so when page is refreshed
 
-## 6. Routing ⭐️
+## 8. Routing ⭐️
 - `Routing` is the process of selecting a path for traffic in a network or between or across multiple networks
 - Let's you navigate between different pages in a web application
 
@@ -365,7 +93,7 @@ function App(){
 }
 ```
 
-### API Integration
+## 9. API Integration
 - For this example we will use `axios` to fetch data from an API.
 - **Install axios**
   - `npm install axios`

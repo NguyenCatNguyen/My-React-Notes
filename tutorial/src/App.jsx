@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './component/Counter.jsx';
+import List from './component/List.jsx';
 
 function App() {
+  function Del(){
+    // function confirm(){
+    //   return(<><h1>You have confirm delete</h1></>)
+    // }
+
+    // function cancel(){
+    //   return(<><h1>You continue with the delete</h1></>)
+    // }
+    // return(
+    //   <>
+    //   <button onClick={()=>confirm()}>Confirm</button>
+    //   <button onClick={()=>cancel()}>Cancel</button>
+    //   </>
+    // )
+    
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter/>
+      <List todo = "Finish week5" TodoDelete={Del} />
     </div>
   );
 }
