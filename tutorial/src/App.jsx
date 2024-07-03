@@ -1,31 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from './component/Counter.jsx';
-import List from './component/List.jsx';
+import {BrowserRouter as Router , Routes, Route, Link} from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Users from './pages/Users';
+import Nav from './Nav';
 
 function App() {
-  function Del(){
-    // function confirm(){
-    //   return(<><h1>You have confirm delete</h1></>)
-    // }
-
-    // function cancel(){
-    //   return(<><h1>You continue with the delete</h1></>)
-    // }
-    // return(
-    //   <>
-    //   <button onClick={()=>confirm()}>Confirm</button>
-    //   <button onClick={()=>cancel()}>Cancel</button>
-    //   </>
-    // )
-    
-  }
-  return (
-    <div className="App">
-      <Counter/>
-      <List todo = "Finish week5" TodoDelete={Del} />
-    </div>
-  );
-}
+  return(
+    <>
+      <Router>
+        <Nav/>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+        </Routes>
+      </Router>
+    </>
+  )}
 
 export default App;
