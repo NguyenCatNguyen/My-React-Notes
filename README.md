@@ -404,7 +404,30 @@ function Users(){
 ```
 
 ## 7. API Integration ⭐
+1. Install `Asios`
+```bash
+npm install axios
+```
+2. Import `axios`, `useState` and `useEffect`
+```jsx
+import axios from 'axios';
+import {useState, useEffect} from 'react';
+```
+2. Create Async Function to fetch data from the API
+3. Use the `useEffect` hook to call the function
+4. Use the `useState` hook to store the data
+5. Display the data in the component
+
+```jsx
+
+
+function Profile(){
+
+}
+```
 ### 1. Axios Introduction
+- `Axios` is a promise-based HTTP client for the browser and will be used to fetch data from an API.
+
 1. Install Axios
 ```bash
 npm install axios
