@@ -15,15 +15,29 @@ export default function Book({book}) {
                             </a>
                         </div>
                         <div className="book__ratings">
-                            <FontAwesomeIcon icon="star"/>
-                            <FontAwesomeIcon icon="star"/>
-                            <FontAwesomeIcon icon="star"/>
-                            <FontAwesomeIcon icon="star"/>
-                            <FontAwesomeIcon icon="star-half-alt"/>
+                            {
+                                new Array(Math.floor(book.rating)).fill(0).map((_, index) => <FontAwesomeIcon icon="star" key={index}/>)
+                            }
+                            {
+                                !Number.isInteger(book.rating) && <FontAwesomeIcon icon="star-half-alt"/>
+                                // If rating is an integer, don't show half star, else show half star
+                                
+                            }
                         </div>
                         <div className="book__price">
-                            <span className="book__price--normal">${book.originalPrice}</span>
-                            ${book.salePrice}
+                            {book.salePrice ? (
+                                    <>
+                                        <span className="book__price--normal">
+                                            ${book.originalPrice.toFixed(2)}
+                                        </span>
+                                        ${book.salePrice.toFixed(2)}
+                                    </>
+                                ) : (
+                                    <>
+                                    ${book.originalPrice.toFixed(2)}
+                                    </>
+                                )       
+                            }
                         </div>
                     </div>
   )

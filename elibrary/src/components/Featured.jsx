@@ -23,5 +23,3 @@ export default function Featured() {
     </section>
   )
 }
-
-37.48

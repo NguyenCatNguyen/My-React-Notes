@@ -11,6 +11,7 @@ This is a collection of my React notes. It includes the basics of React, React H
 6. [Routing](#6-routing-⭐️)
 7. [API Integration](#7-api-integration-⭐)
 8. [Importing and Exporting](#8-importing-and-exporting-⭐️)
+9. [JavaScript Side Notes](#javascript-side-notes-⭐️)
 ## ❗️ Quick notes
 ### 1. If a function is being called at the beginning.
 - Make sure to remove the `React.StrictMode` in the `index.js` file to avoid the function being called twice.
@@ -456,4 +457,25 @@ function Profile(){
 
 ## 8. Importing and Exporting ⭐️
 ### 1. Image Import
-<img scr="../Assets/Image.png">
+
+<img src="./Assets/Image.png" alt="Image Description" style="width: 700px; position: relative; left:10%; border-radius:5px">
+
+## 9. JavaScript Side Notes ⭐️
+### 1. Operators
+- `&&`: And
+  - Example: `5 === 5 && "Yes"` (If 5 is equal to 5, return Yes)
+  - Example: `isModelOpen && <Modal />` (If isModelOpen is true, return Modal)
+- `||`: Or
+### 2.If Else shorthand
+- `? :`: Ternary
+  - Example: `5 === 5 ? "Yes" : "No"` (If 5 is equal to 5, return Yes, else return No)
+  - Example: `isModelOpen ? <Modal /> : null` (If isModelOpen is true, return Modal, else return null)
+  - Example: `isModelOpen ? <Modal /> : null` (If isModelOpen is true, return Modal, else return null)
+- `!!`: Change value to boolean
+  - Example: `!!0` (Change 0 to false)
+  - Example: `!!1` (Change 1 to true)
+- `??`: Nullish Coalescing
+  - Example: `null ?? "Hello"` (If null, return Hello)
+  - Example: `undefined ?? "Hello"` (If undefined, return Hello)
+- `?.`: Optional Chaining
+  - Example: `object?.property` (If object is null, return undefined)
