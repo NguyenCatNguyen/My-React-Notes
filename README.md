@@ -9,11 +9,12 @@ This is a collection of my React notes. It includes the basics of React, React H
 4. [Events Handlers](#4-events-handling-⭐️)
 5. [React Hooks](#5-react-hooks-⭐️)
 6. [Routing](#6-routing-⭐️)
+7. [API Integration](#7-api-integration-⭐)
+8. [Importing and Exporting](#8-importing-and-exporting-⭐️)
 ## ❗️ Quick notes
 ### 1. If a function is being called at the beginning.
 - Make sure to remove the `React.StrictMode` in the `index.js` file to avoid the function being called twice.
   - `React.StrictMode` is used to check for potential problems in the application.
-
 ### React better practices ✨
 - `<>`: use fragment to wrap multiple elements incase of returning multiple elements without the need of extra div
 
@@ -415,20 +416,44 @@ import {useState, useEffect} from 'react';
 ```
 2. Create Async Function to fetch data from the API
 3. Use the `useEffect` hook to call the function
-4. Use the `useState` hook to store the data
+4. Use the `useState` hook to store the data from the API
 5. Display the data in the component
 
 ```jsx
-
+import axios from 'axios';
+import React, {useState. useEffect} from 'react';
 
 function Profile(){
+  const [profile, setProfile] = useState([]);
+
+  // Create a function to fetch data from the API
+  async function fetchData(){
+    const data = await axios.get("URL Link")
+    setProfile(data);
+  }
+
+  // Use the useEffect hook to call the function
+  useEffect(()=>{
+    // Use a setTimeout to delay the fetching of the data incase of slow internet
+    setTimout(()=>{
+      fetchData()
+    }, 1000)
+  }, [])
+
+  return(
+    <div>
+    // Check if the data is available and display it
+      {profile.length > 0
+        ? <h1>{profile[0]?.name</h1>
+        : <h1>Loading...</h1>
+      }
+    </div>)
 
 }
 ```
 ### 1. Axios Introduction
 - `Axios` is a promise-based HTTP client for the browser and will be used to fetch data from an API.
 
-1. Install Axios
-```bash
-npm install axios
-```
+## 8. Importing and Exporting ⭐️
+### 1. Image Import
+<img scr="../Assets/Image.png">
