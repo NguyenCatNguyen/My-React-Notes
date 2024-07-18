@@ -27,7 +27,7 @@ export default function
                     <Highlight
                     icon={<FontAwesomeIcon icon="tags"/>}
                     title="Affordable"
-                    para="Get your hands on popular books for as litle as $1"
+                    para="Get your hands on popular books for as little as $1"
                     />
                     
                 </div>
